@@ -112,3 +112,158 @@ References & Resources:
 Scikit-Learn Classification Metrics Documentation – Technical reference for precision-recall tradeoffs and ROC-AUC curve calculations.
 Pandas Categorical Encoding Documentation – Reference for dummy variable creation and column dropping strategies.
 Credit Risk Modeling Best Practices – Guidance on regularized logistic regression for financial decision-making systems.
+
+Week 3: Sentiment Analysis using DistilBERT
+
+**Dates:** 18/08/2026 – 25/08/2026
+**Domain / Track:** Natural Language Processing / Machine Learning
+**Status:** Completed
+
+## Weekly Objectives
+
+[x] Select and implement a pretrained Language Model suitable for a Natural Language Processing task.
+
+[x] Load and configure DistilBERT for binary sentiment classification using a Jupyter Notebook workflow.
+
+[x] Demonstrate tokenization, text preprocessing, sentiment prediction, and confidence-score generation.
+
+[x] Evaluate model performance using Accuracy, Precision, Recall, F1-Score, and Confusion Matrix.
+
+[x] Analyze model behavior, inference performance, and limitations on different types of natural-language inputs.
+
+# Tasks Completed & Deliverables
+
+## 1. Language Model Selection & Environment Setup
+
+**Description:**
+Selected **DistilBERT (distilbert-base-uncased-finetuned-sst-2-english)** as the pretrained Language Model for implementing a sentiment analysis application.
+
+**Key Actions:**
+
+* Selected DistilBERT because it provides a lightweight and computationally efficient alternative to BERT while retaining strong contextual language understanding.
+* Configured the Hugging Face Transformers environment in Jupyter Notebook.
+* Installed and imported the required Python libraries including `transformers`, `torch`, `scikit-learn`, `pandas`, `matplotlib`, and `seaborn`.
+* Loaded the pretrained tokenizer and sequence-classification model.
+* Inspected model configuration including vocabulary size, hidden size, number of hidden layers, attention heads, maximum sequence length, and output classes.
+
+**Artifacts / Links:**
+
+* Notebook: `notebooks/03_distilbert_sentiment_analysis.ipynb`
+* Model: `distilbert-base-uncased-finetuned-sst-2-english`
+* Output/Visualization: Model configuration and prediction outputs generated in the notebook.
+
+## 2. Tokenization & Sentiment Prediction
+
+**Description:**
+Implemented the complete NLP inference workflow by converting natural-language sentences into tokens and using the pretrained DistilBERT model to classify text as positive or negative sentiment.
+
+**Key Actions:**
+
+* Used the DistilBERT tokenizer to convert raw text into token representations.
+* Examined generated tokens and corresponding token IDs to understand the preprocessing stage.
+* Passed tokenized inputs through the pretrained transformer model.
+* Applied sequence classification to identify sentiment polarity.
+* Generated prediction confidence scores for individual text inputs.
+* Implemented an interactive input section that allows users to enter a sentence and receive a sentiment prediction.
+
+**Example Application:**
+
+* Positive input: `"I really enjoyed this movie. It was fantastic!"`
+* Negative input: `"The service was terrible and disappointing."`
+
+The model returns the predicted sentiment label along with a confidence score.
+
+**Artifacts / Links:**
+
+* Code: `src/distilbert_sentiment_analysis.py`
+* Notebook: `notebooks/03_distilbert_sentiment_analysis.ipynb`
+* Output/Visualization: Sentiment prediction and confidence-score outputs.
+
+## 3. Model Evaluation & Performance Analysis
+
+**Description:**
+Created a manually labelled sentiment dataset and evaluated the pretrained DistilBERT model on unseen test examples using standard classification metrics.
+
+**Key Actions:**
+
+* Created a binary sentiment dataset containing positive and negative text samples.
+* Generated predictions for all test samples using DistilBERT.
+* Compared actual sentiment labels with model-predicted labels.
+* Calculated **Accuracy, Precision, Recall, and F1-Score**.
+* Generated a classification report to analyze class-wise performance.
+* Constructed a confusion matrix to identify correct classifications and misclassifications.
+* Analyzed model confidence scores across individual test samples.
+
+**Evaluation Metrics:**
+
+* Accuracy – Measures the overall percentage of correctly classified sentiment samples.
+* Precision – Measures the proportion of predicted positive samples that were actually positive.
+* Recall – Measures the proportion of actual positive samples correctly identified.
+* F1-Score – Provides a balanced measure of Precision and Recall.
+
+**Artifacts / Links:**
+
+* Output/Visualization: `assets/plots/distilbert_confusion_matrix.png`
+* Output/Visualization: `assets/plots/model_confidence_scores.png`
+* Evaluation results: Generated within the Jupyter Notebook.
+
+# Key Learnings & Takeaways
+
+## Technical Concepts
+
+**Pretrained Language Models:**
+Learned how pretrained transformer-based Language Models can be directly applied to NLP tasks without training a model completely from scratch.
+
+**Transformer-Based NLP:**
+Understood the role of transformer architectures in capturing contextual relationships between words and generating meaningful representations for classification tasks.
+
+**Tokenization:**
+Learned how raw natural-language text is converted into tokens and numerical token IDs before being processed by the transformer model.
+
+**Transfer Learning:**
+Understood how a model pretrained on a large text corpus can be fine-tuned for a specific NLP task such as sentiment classification.
+
+**Confidence-Based Prediction:**
+Analyzed the model's confidence scores to understand how strongly the model supports a particular sentiment prediction.
+
+**Model Evaluation:**
+Learned how Accuracy, Precision, Recall, F1-Score, and Confusion Matrix provide different perspectives on classification performance.
+
+## Model Behavior & Limitations
+
+* Observed that DistilBERT performs effectively on straightforward positive and negative statements.
+* Identified that complex language can be more challenging for sentiment classification.
+* Tested sentences involving negation, ambiguity, and context-dependent meaning.
+* Observed that sentiment models may have difficulty correctly interpreting sarcasm and subtle contextual expressions.
+* Compared prediction confidence across different input sentences.
+* Measured inference time to understand the practical efficiency of the pretrained model.
+
+# Tools & Libraries Explored
+
+**Hugging Face Transformers:**
+Used `AutoTokenizer`, `AutoModelForSequenceClassification`, and the sentiment-analysis pipeline to load and utilize the pretrained DistilBERT model.
+
+**PyTorch:**
+Used for model inference and tensor-based processing.
+
+**scikit-learn:**
+Applied `accuracy_score`, `precision_score`, `recall_score`, `f1_score`, `classification_report`, and `confusion_matrix` for model evaluation.
+
+**Pandas:**
+Created and manipulated the sentiment evaluation dataset and compared actual versus predicted labels.
+
+**Matplotlib & Seaborn:**
+Created confidence-score visualizations and confusion-matrix plots for performance analysis.
+
+**Jupyter Notebook:**
+Used as the primary development environment for implementing and demonstrating the complete NLP workflow.
+
+# References & Resources
+
+**Hugging Face Transformers Documentation** – Reference for pretrained transformer models, tokenizers, and sequence classification.
+
+**DistilBERT Model Documentation** – Reference for the selected pretrained `distilbert-base-uncased-finetuned-sst-2-english` model.
+
+**Scikit-Learn Classification Metrics Documentation** – Reference for Accuracy, Precision, Recall, F1-Score, classification reports, and confusion matrices.
+
+**PyTorch Documentation** – Reference for tensor operations and model inference.
